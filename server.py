@@ -8,6 +8,7 @@ bot = ChatCompletion(api_key_path='./openai_api_key')
 logger.add('log.txt')
 
 with gr.Blocks() as demo:
+    gr.Markdown('<div style="text-align:center"><h1>ChatGPT for fun</h1><p><i>    any issues contact wangyongqing0731@gmail.com</i></p></div>')
     chatbot = gr.Chatbot(show_label=False)
     msg = gr.TextArea(show_label=False, placeholder='Say something to ChatGPT here ...')
     send_btn = gr.Button('Send')
@@ -48,4 +49,4 @@ with gr.Blocks() as demo:
     retry_btn.click(retry, inputs=chatbot, outputs=[msg, chatbot])
 
 
-demo.launch(share=False)
+demo.launch(share=True)
